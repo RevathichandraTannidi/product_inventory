@@ -15,14 +15,14 @@ public class Main {
     ProductService.filterAndSortProducts(products).forEach(System.out::println);
 
    System.out.println("\nproduct names in uppercase:");
-   System.out.println(ProductService.getProductNamesInUppercase(products));
+   System.out.println(ProductService.productNamesInUppercase(products));
 
-   System.out.println("\ntotal stock quantity of all products: " + ProductService.getTotalStockQuantity(products));
+   System.out.println("\ntotal stock quantity of all products: " + ProductService.totalStockQuantity(products));
 
-   System.out.println("\naverage Price of Products: " + ProductService.getAveragePrice(products));
+   System.out.println("\naverage Price of Products: " + ProductService.averagePrice(products));
 
    System.out.println("\nmost expensive Product:");
-   Optional<Product> expensiveProduct = ProductService.getMostExpensiveProduct(products);
+   Optional<Product> expensiveProduct = ProductService.mostExpensiveProduct(products);
    expensiveProduct.ifPresent(System.out::println);
 
    System.out.println("\ngrouped by category pf products:");
@@ -36,13 +36,13 @@ public class Main {
    System.out.println("\nin Stock: " + partitionedByStock.get(true));
    System.out.println("\nout of Stock: " + partitionedByStock.get(false));
 
-   System.out.println("\nproduct names in csv: " + ProductService.getProductNamesCommaSeparated(products));
+   System.out.println("\nproduct names in csv: " + ProductService.pnamesCommaSeparated(products));
 
-   System.out.println("\nare all products above $10? " + ProductService.allProductsAbovePrice(products, 10));
+   System.out.println("\nare all products above $10? " + ProductService.abovePrice(products, 10));
 
-   System.out.println("\nif any product belongs to the electronics category ? " + ProductService.anyElectronicsProduct(products));
+   System.out.println("\nif any product belongs to the electronics category ? " + ProductService.electronicsProduct(products));
    System.out.println("\ncount of Products in Stock: " + ProductService.countProductsInStock(products));
-   System.out.println("\nhighest rated product: " + ProductService.findHighestRatedProduct(products));
+   System.out.println("\nhighest rated product: " + ProductService.highestRatedProduct(products));
   }
   catch (filenotfound e) {
    System.err.println("An error occurred while reading the CSV file: " + e.getMessage());

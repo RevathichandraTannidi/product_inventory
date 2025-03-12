@@ -17,6 +17,6 @@ The system maintains a list of products, each containing details such as product
  * Use Optional to handle cases where rating is missing. If a product has no rating, assign a default value of 3.0.
  * Ensure that no NullPointerException occurs when stockQuantity is null.
  * Check if all products have a price greater than $10
- * Check if any product belongs to the "Electronics" category
+ * Check if any product belongs to the Electronics category
 extra:
  Implement exception handling  to avoid crashes when processing products with missing details.

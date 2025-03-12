@@ -15,14 +15,14 @@ public class ProductService {
         }
 
         // product names in uppercase
-        public static List<String> getProductNamesInUppercase(List<Product> products) {
+        public static List<String> productNamesInUppercase(List<Product> products) {
             return products.stream()
                     .map(p ->  p.getName().toUpperCase())
                     .collect(Collectors.toList());
         }
 
         //  total stock quantity
-        public static Double getTotalStockQuantity(List<Product> products) {
+        public static Double totalStockQuantity(List<Product> products) {
             return products.stream()
                     .map(p -> Optional.ofNullable(p.getStock_quantity()).orElse(0.0)) // Handle null values
                     .mapToDouble(Double::doubleValue)
@@ -30,13 +30,13 @@ public class ProductService {
         }
 
         //   average price of all products
-        public static double getAveragePrice(List<Product> products) {
+        public static double averagePrice(List<Product> products) {
             return products.stream()
                     .collect(Collectors.averagingDouble(Product::getPrice));
         }
 
         //  the most expensive product
-        public static Optional<Product> getMostExpensiveProduct(List<Product> products) {
+        public static Optional<Product> mostExpensiveProduct(List<Product> products) {
             return products.stream()
                     .max(Comparator.comparingDouble(Product::getPrice));
         }
@@ -47,7 +47,7 @@ public class ProductService {
                     .collect(Collectors.groupingBy(Product::getCategory));
         }
     // find the product with the highest rating safely
-    public static Optional<Product> findHighestRatedProduct(List<Product> products) {
+    public static Optional<Product> highestRatedProduct(List<Product> products) {
         return products.stream()
                 .filter(p -> p.getRating().isPresent())
                 .max(Comparator.comparing(p -> p.getRating().get()));
@@ -66,19 +66,19 @@ public class ProductService {
     }
 
         //   comma-separated list of product names
-        public static String getProductNamesCommaSeparated(List<Product> products) {
+        public static String pnamesCommaSeparated(List<Product> products) {
             return products.stream()
                     .map(Product::getName)
                     .collect(Collectors.joining(", "));
         }
 
         //  all products cost more than $10
-        public static boolean allProductsAbovePrice(List<Product> products, double price) {
+        public static boolean abovePrice(List<Product> products, double price) {
             return products.stream().allMatch(p -> p.getPrice() > price);
         }
 
         //  any product belongs to "Electronics"
-        public static boolean anyElectronicsProduct(List<Product> products) {
+        public static boolean electronicsProduct(List<Product> products) {
             return products.stream().anyMatch(p -> p.getCategory().equalsIgnoreCase("Electronics"));
         }
     }
