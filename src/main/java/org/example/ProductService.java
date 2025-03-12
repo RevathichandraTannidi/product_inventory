@@ -17,7 +17,7 @@ public class ProductService {
         // get product names in uppercase
         public static List<String> getProductNamesInUppercase(List<Product> products) {
             return products.stream()
-                    .map(p -> p.getName().toUpperCase())
+                    .map(p ->  p.getName().toUpperCase())
                     .collect(Collectors.toList());
         }
 

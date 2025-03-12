@@ -14,14 +14,14 @@ public class CsvReader {
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(filePath))) {
             String line;
-            boolean isFirstLine = true; // Flag to skip the header row
+            boolean isFirstLine = true;
             while ((line = br.readLine()) != null) {
                 if (isFirstLine) {
                     isFirstLine = false;
-                    continue; // Skip the header row
+                    continue;
                 }
-                if (line.trim().isEmpty()) {
-                    continue; // Skip empty lines
+                if (line.isEmpty()) {
+                    continue;
                 }
                 String[] values = line.split(",");
                 if (values.length < 5) {

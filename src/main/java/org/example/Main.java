@@ -43,8 +43,10 @@ public class Main {
    System.out.println("\nif any product belongs to the electronics category ? " + ProductService.anyElectronicsProduct(products));
    System.out.println("\ncount of Products in Stock: " + ProductService.countProductsInStock(products));
    System.out.println("\nhighest rated product: " + ProductService.findHighestRatedProduct(products));
-  } catch (custom_Exception e) {
+  }
+  catch (custom_Exception e) {
    System.err.println("An error occurred while reading the CSV file: " + e.getMessage());
   }
+
  }
 }
