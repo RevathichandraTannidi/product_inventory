@@ -11,8 +11,8 @@ public class Main {
   try {
    List<Product> products = CsvReader.productscsv(filePath);
 
-   System.out.println("Filter and Sort Products:");
-   ProductService.filterAndSortProducts(products).forEach(System.out::println);
+     System.out.println("Filter and Sort Products:");
+    ProductService.filterAndSortProducts(products).forEach(System.out::println);
 
    System.out.println("\nproduct names in uppercase:");
    System.out.println(ProductService.getProductNamesInUppercase(products));
