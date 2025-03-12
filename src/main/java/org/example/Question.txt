@@ -11,7 +11,7 @@ The system maintains a list of products, each containing details such as product
  * Find the average price of products
  * Create a list of product names in uppercase.
  * Find the product with the highest  rating
- * Find the most expensive products
+ * Find the most expensive products in each category
  * Group products by their category and  print them.
  * Partition products into two lists: those that are in stock and those that are out of stock
  * Use Optional to handle cases where rating is missing. If a product has no rating, assign a default value of 3.0.
