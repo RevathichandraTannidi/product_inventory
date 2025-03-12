@@ -25,7 +25,7 @@ public class CsvReader {
                 }
                 String[] values = line.split(",");
                 if (values.length < 5) {
-                    throw new custom_Exception("Invalid CSV format: " + line);
+                    throw new custom_Exception("invalid format: " + line);
                 }
 
                 Optional<Double> rating = (values.length > 5 && !values[5].isEmpty()) ? Optional.of(Double.parseDouble(values[5])) : Optional.empty();
