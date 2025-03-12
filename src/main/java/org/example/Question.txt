@@ -1,0 +1,22 @@
+Problem Statement:
+
+You are managing an inventory system for an e-commerce store.
+The system maintains a list of products, each containing details such as product ID,
+ name, category, price, stock quantity, and rating. You need to process this data
+ using Java Streams.
+
+ Todo:
+ * Get a list of products that cost more than $100 and sort them in ascending order of price.
+ * Find the total stock quantity of all products
+ * Find the average price of products
+ * Create a list of product names in uppercase.
+ * Find the product with the highest rating
+ * Find the most expensive product
+ * Group products by their category and print them.
+ * Partition products into two lists: those that are in stock and those that are out of stock
+ * Use Optional to handle cases where rating is missing. If a product has no rating, assign a default value of 3.0.
+ * Ensure that no NullPointerException occurs when stockQuantity is null.
+ * Check if all products have a price greater than $10
+ * Check if any product belongs to the "Electronics" category
+extra:
+ Implement exception handling  to avoid crashes when processing products with missing details.

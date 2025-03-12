@@ -1,0 +1,12 @@
+id,name,category,price,stockQuantity,rating
+1,Laptop,Electronics,1200.99,10,4.5
+2,Smartphone,Electronics,799.49,5,4.7
+3,Headphones,Accessories,99.99,20,4.2
+4,Keyboard,Accessories,49.99,15,
+5,Gaming Chair,Furniture,249.99,8,4.6
+6,Desk Lamp,Home Decor,39.99,12,4.1
+7,Backpack,Fashion,89.99,30,4.3
+8,Monitor,Electronics,299.99,,4.4
+9,Sneakers,Fashion,120.00,0,4.0
+10,Tablet,Electronics,499.99,7,4.5
+
