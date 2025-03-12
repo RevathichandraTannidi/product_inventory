@@ -11,7 +11,7 @@ public class Main {
   try {
    List<Product> products = CsvReader.productscsv(filePath);
 
-     System.out.println("Filter and Sort Products:");
+     System.out.println("Filter and Sort Products more than $100:");
     ProductService.filterAndSortProducts(products).forEach(System.out::println);
 
    System.out.println("\nproduct names in uppercase:");
@@ -38,9 +38,9 @@ public class Main {
 
    System.out.println("\nproduct names in csv: " + ProductService.pnamesCommaSeparated(products));
 
-   System.out.println("\nare all products above $10? " + ProductService.abovePrice(products, 10));
+   System.out.println("\nare all products above $10: " + ProductService.abovePrice(products, 10));
 
-   System.out.println("\nif any product belongs to the electronics category ? " + ProductService.electronicsProduct(products));
+   System.out.println("\nproduct belongs to the electronics category ? " + ProductService.electronicsProduct(products));
    System.out.println("\ncount of Products in Stock: " + ProductService.countProductsInStock(products));
    System.out.println("\nhighest rated product: " + ProductService.highestRatedProduct(products));
   }
