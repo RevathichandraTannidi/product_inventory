@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 public class ProductService {
 
-        // get a list of products that cost more than $100 and sort them in ascending order of price.
+        //list of products that cost more than $100 and sort them in ascending order of price.
         public static List<Product> filterAndSortProducts(List<Product> products) {
             return products.stream()
                     .filter(p -> p.getPrice() > 100)
@@ -14,14 +14,14 @@ public class ProductService {
                     .collect(Collectors.toList());
         }
 
-        // get product names in uppercase
+        // product names in uppercase
         public static List<String> getProductNamesInUppercase(List<Product> products) {
             return products.stream()
                     .map(p ->  p.getName().toUpperCase())
                     .collect(Collectors.toList());
         }
 
-        // Get total stock quantity
+        //  total stock quantity
         public static Double getTotalStockQuantity(List<Product> products) {
             return products.stream()
                     .map(p -> Optional.ofNullable(p.getStock_quantity()).orElse(0.0)) // Handle null values
@@ -29,13 +29,13 @@ public class ProductService {
                     .sum();
         }
 
-        //  Get average price of all products
+        //   average price of all products
         public static double getAveragePrice(List<Product> products) {
             return products.stream()
                     .collect(Collectors.averagingDouble(Product::getPrice));
         }
 
-        //  Get the most expensive product
+        //  the most expensive product
         public static Optional<Product> getMostExpensiveProduct(List<Product> products) {
             return products.stream()
                     .max(Comparator.comparingDouble(Product::getPrice));
@@ -46,14 +46,14 @@ public class ProductService {
             return products.stream()
                     .collect(Collectors.groupingBy(Product::getCategory));
         }
-    // Find the product with the highest rating safely
+    // find the product with the highest rating safely
     public static Optional<Product> findHighestRatedProduct(List<Product> products) {
         return products.stream()
                 .filter(p -> p.getRating().isPresent())
                 .max(Comparator.comparing(p -> p.getRating().get()));
     }
 
-        //  Partition products into in-stock and out-of-stock
+        //  partition products into in stock and out stock
         public static Map<Boolean, List<Product>> partitionByStock(List<Product> products) {
             return products.stream()
                     .collect(Collectors.partitioningBy(p -> Optional.ofNullable(p.getStock_quantity()).orElse(3.0) > 0));
@@ -65,19 +65,19 @@ public class ProductService {
                 .count();
     }
 
-        //  Get comma-separated list of product names
+        //   comma-separated list of product names
         public static String getProductNamesCommaSeparated(List<Product> products) {
             return products.stream()
                     .map(Product::getName)
                     .collect(Collectors.joining(", "));
         }
 
-        //  Check if all products cost more than $10
+        //  all products cost more than $10
         public static boolean allProductsAbovePrice(List<Product> products, double price) {
             return products.stream().allMatch(p -> p.getPrice() > price);
         }
 
-        // Check if any product belongs to "Electronics"
+        //  any product belongs to "Electronics"
         public static boolean anyElectronicsProduct(List<Product> products) {
             return products.stream().anyMatch(p -> p.getCategory().equalsIgnoreCase("Electronics"));
         }
