@@ -14,10 +14,10 @@ public class CsvReader {
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(filePath))) {
             String line;
-            boolean isFirstLine = true;
+          br.readLine();
             while ((line = br.readLine()) != null) {
-                if (isFirstLine || line.isEmpty()) {
-                    isFirstLine = false;
+                if ( line.isEmpty()) {
+
                     continue;
                 }
 
